@@ -16,6 +16,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource,
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! RestaurantDetailTableViewCell
         
+        //set cell backgroundcolor, let background become transparent
+        cell.backgroundColor = UIColor.clearColor()
+        
         //SET CELL
         switch indexPath.row{
         
@@ -47,7 +50,17 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set background color
         restaurantImageView.image = UIImage(named: restaurant.image)
+        tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue:240.0/255.0, alpha:0.2)
+        
+        //cut surplus cell line
+        tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+        //set line color
+        tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue:240.0/255.0, alpha:
+            0.8)
+        
     }
 
     override func didReceiveMemoryWarning() {
