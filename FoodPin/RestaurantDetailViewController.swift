@@ -61,6 +61,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource,
         tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue:240.0/255.0, alpha:
             0.8)
         
+        //title = restaurant name
+        title = restaurant.name
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,5 +84,12 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource,
     */
     @IBOutlet var tableView:UITableView!
     
-
+    //hide navigationbar in restaurantDetailView but appear on restaurantView
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    
 }

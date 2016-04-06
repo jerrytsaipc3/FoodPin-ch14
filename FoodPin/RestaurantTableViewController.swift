@@ -41,6 +41,11 @@ class RestaurantTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //remove title word，清空返回按鈕標題
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -126,5 +131,11 @@ class RestaurantTableViewController: UITableViewController {
         }
     }
     
-
+    //hide navigationbar in restaurantDetailView but appear on restaurantView
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
+  
 }
